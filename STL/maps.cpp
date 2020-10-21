@@ -11,8 +11,7 @@ using namespace std;
 
 
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-    // either 2 ways pass all cases   
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     map<string,int> s;
     int casenum=0,query=0,mark=0;
     string name;
@@ -30,11 +29,14 @@ int main() {
                      s[name] += mark;
                }
                else {
-                   s.insert( {name, mark} );
+                // either ways work for map insert
+                    s[name] = mark;
+              //     s.insert( {name, mark} );
                }
                break;
             case 2:
                 if(studentFound != s.end()) {
+                    // either ways work for locate vale in a map
                     //s.at(name) = 0;
                     s[name] = 0;
                 }
@@ -52,8 +54,6 @@ int main() {
     }
     return 0;
 }
-
-
 
 
 
