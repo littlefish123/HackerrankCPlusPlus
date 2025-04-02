@@ -1,3 +1,0 @@
-﻿  MaxProfit1.cpp
-D:\HackerRankSolution\HackerrankCPlusPlus\jpmorgan\MaxProfit1.cpp(50,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  jpmorgan.vcxproj -> D:\HackerRankSolution\HackerrankCPlusPlus\jpmorgan\x64\Debug\jpmorgan.exe
