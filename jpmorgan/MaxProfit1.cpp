@@ -26,6 +26,21 @@ STDIN       Function
 1 2 100     prices = [1, 2, 100]
 4           prices[] size n = 4
 1 3 1 2     prices =[1, 3, 1, 2]
+
+STUDIN
+------
+3
+7
+100 180 260 310 40 535 695
+6
+10 22 5 75 65 80
+5
+100 90 80 50 25
+
+Output:
+2745
+223
+0
 */
 
 #include <iostream>
@@ -36,7 +51,7 @@ using namespace std;
 
 int maxProfit(vector<int>& prices) {
 	int profit=0, maxprice = 0;
-	for (size_t i = prices.size(); i >= 0; i--) {
+	for (int i = prices.size()-1; i >= 0; i--) {
 		maxprice = max(maxprice, prices[i]);
 		profit += max(0, maxprice - prices[i]);
 	}
@@ -52,6 +67,7 @@ int main() {
 		int n;
 		cout << "Enter price size : ";
 		cin >> n;
+		cin.ignore(1, '\n'); // ignore the newline character
 
 		cout << "Enter price (space-separated) : ";
 		string line;
@@ -59,9 +75,9 @@ int main() {
 
 		istringstream iss(line);
 		int num;
-		vector<int> prices(n);
+		vector<int> prices;
 		while (iss >> num)
-			prices.insert(prices.begin(), num);
+			prices.push_back(num);
 
 		cout << "Maximum Profit : " << maxProfit(prices) << endl;
 	
